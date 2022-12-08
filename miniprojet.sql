@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `actvt` (
-  `id-actvt` int(255) NOT NULL,
+  `id_actvt` int(255) NOT NULL,
   `type` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -38,9 +38,9 @@ CREATE TABLE `actvt` (
 -- Structure de la table `actvt-resrv-actvt`
 --
 
-CREATE TABLE `actvt-resrv-actvt` (
-  `id-resrv-actv` int(255) NOT NULL,
-  `id-acvt` int(255) NOT NULL
+CREATE TABLE `actvt_resrv_actvt` (
+  `id_resrv-actv` int(255) NOT NULL,
+  `id_acvt` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -49,9 +49,9 @@ CREATE TABLE `actvt-resrv-actvt` (
 -- Structure de la table `actvt-vil`
 --
 
-CREATE TABLE `actvt-vil` (
-  `id-actvt` int(255) NOT NULL,
-  `id-vil` int(255) NOT NULL
+CREATE TABLE `actvt_vil` (
+  `id_actvt` int(255) NOT NULL,
+  `id_vil` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -61,7 +61,7 @@ CREATE TABLE `actvt-vil` (
 --
 
 CREATE TABLE `bang` (
-  `num-B` int(255) NOT NULL,
+  `num_b` int(255) NOT NULL,
   `type` varchar(255) NOT NULL,
   `prix` int(255) NOT NULL,
   `equipement` varchar(255) NOT NULL
@@ -74,10 +74,10 @@ CREATE TABLE `bang` (
 --
 
 CREATE TABLE `chambre` (
-  `num-ch` int(255) NOT NULL,
-  `type-ch` varchar(255) NOT NULL,
-  `equipement-ch` varchar(255) NOT NULL,
-  `prix-ch` int(255) NOT NULL
+  `num_ch` int(255) NOT NULL,
+  `type_ch` varchar(255) NOT NULL,
+  `equipement_ch` varchar(255) NOT NULL,
+  `prix_ch` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -87,14 +87,14 @@ CREATE TABLE `chambre` (
 --
 
 CREATE TABLE `client` (
-  `id-client` int(255) NOT NULL,
+  `id_client` int(255) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `prenom` varchar(255) NOT NULL,
   `adresse` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `numTel` int(255) NOT NULL,
-  `Date-N` date NOT NULL,
-  `ID-REST-SEJ` int(255) NOT NULL
+  `Date_N` date NOT NULL,
+  `ID_REST_SEJ` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -103,9 +103,9 @@ CREATE TABLE `client` (
 -- Structure de la table `client-serv`
 --
 
-CREATE TABLE `client-serv` (
-  `id-client` int(255) NOT NULL,
-  `id-serv` int(255) NOT NULL
+CREATE TABLE `client_serv` (
+  `id_client` int(255) NOT NULL,
+  `id_serv` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -115,9 +115,9 @@ CREATE TABLE `client-serv` (
 --
 
 CREATE TABLE `emp` (
-  `id-emp` int(255) NOT NULL,
-  `nom-emp` varchar(255) NOT NULL,
-  `prenom-emp` varchar(255) NOT NULL,
+  `id_emp` int(255) NOT NULL,
+  `nom_emp` varchar(255) NOT NULL,
+  `prenom_emp` varchar(255) NOT NULL,
   `post` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -128,11 +128,11 @@ CREATE TABLE `emp` (
 --
 
 CREATE TABLE `hotel` (
-  `id-h` int(255) NOT NULL,
-  `adress-h` varchar(255) NOT NULL,
-  `nombre-ch` int(255) NOT NULL,
+  `id_h` int(255) NOT NULL,
+  `adress_h` varchar(255) NOT NULL,
+  `nombre_ch` int(255) NOT NULL,
   `categorie` varchar(255) NOT NULL,
-  `num-ch` int(255) NOT NULL
+  `num_ch` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -141,11 +141,11 @@ CREATE TABLE `hotel` (
 -- Structure de la table `resrv-activite`
 --
 
-CREATE TABLE `resrv-activite` (
-  `id-resrv-actv` int(255) NOT NULL,
-  `nom-actvt` varchar(255) NOT NULL,
+CREATE TABLE `resrv_activite` (
+  `id_resrv_actv` int(255) NOT NULL,
+  `nom_actvt` varchar(255) NOT NULL,
   `Horaire` date NOT NULL,
-  `id-client` int(255) NOT NULL
+  `id_client` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -154,13 +154,13 @@ CREATE TABLE `resrv-activite` (
 -- Structure de la table `restoraion-sjr`
 --
 
-CREATE TABLE `restoraion-sjr` (
-  `ID9-RSRV` int(11) NOT NULL,
+CREATE TABLE `restoraion_sjr` (
+  `id_rsrv` int(11) NOT NULL,
   `logement` int(11) NOT NULL,
   `prise` int(11) NOT NULL,
   `offre` int(11) NOT NULL,
-  `date-rerv-s` date NOT NULL,
-  `id-sjr` int(11) NOT NULL
+  `date_rerv_s` date NOT NULL,
+  `id_sjr` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -170,10 +170,10 @@ CREATE TABLE `restoraion-sjr` (
 --
 
 CREATE TABLE `service` (
-  `id-serv` int(255) NOT NULL,
-  `type-serv` varchar(255) NOT NULL,
+  `id_serv` int(255) NOT NULL,
+  `type_serv` varchar(255) NOT NULL,
   `tarif` int(255) NOT NULL,
-  `id-emp` int(255) NOT NULL
+  `id_emp` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -183,8 +183,8 @@ CREATE TABLE `service` (
 --
 
 CREATE TABLE `sjr` (
-  `id-sjr` int(11) NOT NULL,
-  `mbr-participants` int(11) NOT NULL
+  `id_sjr` int(11) NOT NULL,
+  `nbr_participants` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -193,9 +193,9 @@ CREATE TABLE `sjr` (
 -- Structure de la table `vil-serv`
 --
 
-CREATE TABLE `vil-serv` (
-  `id-vil` int(11) NOT NULL,
-  `id-serv` int(11) NOT NULL
+CREATE TABLE `vil_serv` (
+  `id_vil` int(11) NOT NULL,
+  `id_serv` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -205,11 +205,11 @@ CREATE TABLE `vil-serv` (
 --
 
 CREATE TABLE `village` (
-  `id-vil` int(255) NOT NULL,
+  `id_vil` int(255) NOT NULL,
   `adresse` varchar(255) NOT NULL,
-  `id-emp` int(255) NOT NULL,
-  `id-h` int(255) NOT NULL,
-  `num-B` int(255) NOT NULL
+  `id_emp` int(255) NOT NULL,
+  `id_h` int(255) NOT NULL,
+  `num_b` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -220,91 +220,91 @@ CREATE TABLE `village` (
 -- Index pour la table `actvt`
 --
 ALTER TABLE `actvt`
-  ADD PRIMARY KEY (`id-actvt`);
+  ADD PRIMARY KEY (`id_actvt`);
 
 --
 -- Index pour la table `actvt-resrv-actvt`
 --
-ALTER TABLE `actvt-resrv-actvt`
-  ADD PRIMARY KEY (`id-resrv-actv`);
+ALTER TABLE `actvt_resrv_actvt`
+  ADD PRIMARY KEY (`id_resrv_actv`);
 
 --
 -- Index pour la table `actvt-vil`
 --
-ALTER TABLE `actvt-vil`
-  ADD PRIMARY KEY (`id-actvt`,`id-vil`);
+ALTER TABLE `actvt_vil`
+  ADD PRIMARY KEY (`id_actvt`,`id_vil`);
 
 --
 -- Index pour la table `bang`
 --
 ALTER TABLE `bang`
-  ADD PRIMARY KEY (`num-B`);
+  ADD PRIMARY KEY (`num_b`);
 
 --
 -- Index pour la table `chambre`
 --
 ALTER TABLE `chambre`
-  ADD PRIMARY KEY (`num-ch`);
+  ADD PRIMARY KEY (`num_ch`);
 
 --
 -- Index pour la table `client`
 --
 ALTER TABLE `client`
-  ADD PRIMARY KEY (`id-client`);
+  ADD PRIMARY KEY (`id_client`);
 
 --
 -- Index pour la table `client-serv`
 --
-ALTER TABLE `client-serv`
-  ADD PRIMARY KEY (`id-client`,`id-serv`);
+ALTER TABLE `client_serv`
+  ADD PRIMARY KEY (`id_client`,`id_serv`);
 
 --
 -- Index pour la table `emp`
 --
 ALTER TABLE `emp`
-  ADD PRIMARY KEY (`id-emp`);
+  ADD PRIMARY KEY (`id_emp`);
 
 --
 -- Index pour la table `hotel`
 --
 ALTER TABLE `hotel`
-  ADD PRIMARY KEY (`id-h`);
+  ADD PRIMARY KEY (`id_h`);
 
 --
 -- Index pour la table `resrv-activite`
 --
-ALTER TABLE `resrv-activite`
-  ADD PRIMARY KEY (`id-resrv-actv`);
+ALTER TABLE `resrv_activite`
+  ADD PRIMARY KEY (`id_resrv_actv`);
 
 --
 -- Index pour la table `restoraion-sjr`
 --
-ALTER TABLE `restoraion-sjr`
-  ADD PRIMARY KEY (`ID9-RSRV`);
+ALTER TABLE `restoraion_sjr`
+  ADD PRIMARY KEY (`id_rsrv`);
 
 --
 -- Index pour la table `service`
 --
 ALTER TABLE `service`
-  ADD PRIMARY KEY (`id-serv`);
+  ADD PRIMARY KEY (`id_serv`);
 
 --
 -- Index pour la table `sjr`
 --
 ALTER TABLE `sjr`
-  ADD PRIMARY KEY (`id-sjr`);
+  ADD PRIMARY KEY (`id_sjr`);
 
 --
 -- Index pour la table `vil-serv`
 --
-ALTER TABLE `vil-serv`
-  ADD PRIMARY KEY (`id-vil`,`id-serv`);
+ALTER TABLE `vil_serv`
+  ADD PRIMARY KEY (`id_vil`,`id_serv`);
 
 --
 -- Index pour la table `village`
 --
 ALTER TABLE `village`
-  ADD PRIMARY KEY (`id-vil`);
+  ADD PRIMARY KEY (`id_vil`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -314,67 +314,67 @@ ALTER TABLE `village`
 -- AUTO_INCREMENT pour la table `actvt`
 --
 ALTER TABLE `actvt`
-  MODIFY `id-actvt` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_actvt` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `actvt-resrv-actvt`
 --
-ALTER TABLE `actvt-resrv-actvt`
-  MODIFY `id-resrv-actv` int(255) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `actvt_resrv_actvt`
+  MODIFY `id_resrv_actv` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `bang`
 --
 ALTER TABLE `bang`
-  MODIFY `num-B` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `num_b` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `chambre`
 --
 ALTER TABLE `chambre`
-  MODIFY `num-ch` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `num_ch` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `emp`
 --
 ALTER TABLE `emp`
-  MODIFY `id-emp` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_emp` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `hotel`
 --
 ALTER TABLE `hotel`
-  MODIFY `id-h` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_h` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `resrv-activite`
 --
-ALTER TABLE `resrv-activite`
-  MODIFY `id-resrv-actv` int(255) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `resrv_activite`
+  MODIFY `id_resrv_actv` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `restoraion-sjr`
 --
-ALTER TABLE `restoraion-sjr`
-  MODIFY `ID9-RSRV` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `restoraion_sjr`
+  MODIFY `id_rsrv` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `service`
 --
 ALTER TABLE `service`
-  MODIFY `id-serv` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_serv` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `sjr`
 --
 ALTER TABLE `sjr`
-  MODIFY `id-sjr` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_sjr` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `village`
 --
 ALTER TABLE `village`
-  MODIFY `id-vil` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_vil` int(255) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

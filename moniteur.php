@@ -1,7 +1,7 @@
 <?php
 session_start();
 $err = "";
-$bdd=new PDO('mysql:host=localhost:5000;dbname=mini_projet;charset=utf8;','root','');
+$bdd=new PDO('mysql:host=localhost:5000;dbname=mini_projet1;charset=utf8;','root','');
 $z=$bdd->prepare('SELECT * FROM emp');
 $z->execute();
 $z = $z->fetchAll();
@@ -57,39 +57,36 @@ if(isset($_POST['Ajouter'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>connexion-admin</title>
+    <title>Moniteur</title>
 </head>
 <body>
 <div class="index">
 <div class="parametres">
             <h1>Paramétres de site web</h1>
             <br>
-            <a href="admin_infra_strctr.php">Hoteles .</a>
+            <a href="admin_infra_strctr.php">Planning d'ctivites.</a>
             <br>
-            <a href="bungalos-infra.php">BUngalos .</a>
+            <a href="bungalos-infra.php">Modefier Le Planing .</a>
             <br>
             <a href="logout.php"><input type="submit" value="Deconnexion" class="subm1"></a>
         </div>
         <div class="desc">
             <h5 style="margin-left: 20%; color: crimson;"><?=  $err; ?></h5>
-            <h2>Hoteles</h2>
+            <h2>Planning Activités .</h2>
             <?php
-            $bdd=new PDO('mysql:host=localhost:5000;dbname=mini_projet;charset=utf8;','root','');
-            $recupuser = $bdd->query('SELECT * FROM hotel');
+            $bdd=new PDO('mysql:host=localhost:5000;dbname=mini_projet1;charset=utf8;','root','');
+            $recupuser = $bdd->query('SELECT * FROM actvt_resrv_actvt,actvt WHERE actvt_resrv_actvt.id_actvt=actvt.id_actvt');
             while($user = $recupuser->fetch()){
            ?>
            <div class="Description">
-           <label>Nom Hotel :</label>
-                <p><?= $user['nom_h'];?></p>
+           <label>Nom Activté :</label>
+                <p><?= $user['nom_actvt'];?></p>
                 <br>
-                <label>Categorie :</label>
-                <p><?= $user['categorie'];?></p>
+                <label>Type Activité :</label>
+                <p><?= $user['type_actvt'];?></p>
                 <br>
-                <label>Eddresse : </label>
-                <p><?= $user['adress_h'];?></p>
-                <br>
-                <label>Nombre de chambres : </label>
-                <p><?= $user['nombre_ch'];?></p>
+                <label>Horaire : </label>
+                <p><?= $user['Horaire'];?></p>
                 <br>
            <a href="supprimer_hot.php?id=<?= $user['id_h'];?>"><input type="submit" value="Supprimper"  style="color: red;text-decoration: none;"></a>
            </div>
@@ -97,7 +94,7 @@ if(isset($_POST['Ajouter'])){
           } 
           ?>
           <form method="POST" class="frm">
-                <h4>Ajouter un Hotel</h4>
+                <h4>Planning</h4>
                 <label for="nom_h">categorie : </label>
                 <input type="text" name="nom_h" style="width: 200px;height: 20px;">
                 <br>
